@@ -3,66 +3,53 @@ site_author: Mathod
 
 nav:
   - Home: index.md
-  - DevOps:
-    - Argo:
-      - CD: devops/argo/cd/cd.md
-      - Workflows: devops/argo/workflows/workflows.md
-      - Rollouts: devops/argo/rollouts/rollouts.md
-      - Events: devops/argo/events/events.md
-    - Kubernetes:
-      - Object: devops/kubernetes/index.md
-  - Glossary: glossary/index.md
-  - About: about/index.md
 
 theme:
   name: material
   palette:
-    # Palette toggle for light mode
     - scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
     - scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  features:
-    - content.action.edit
-    - content.action.view
-    - content.code.annotate
-    - content.code.copy
-    - content.tooltips
-    - header.autohide
-    - navigation.footer
-    - navigation.instant
-    - navigation.sections
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
+#  features:
+#    - content.action.edit
+#    - content.action.view
+#    - content.code.annotate
+#    - content.code.copy
+#    - content.tooltips
+#    - header.autohide
+#    - navigation.footer
+#    - navigation.instant
+#    - navigation.sections
+#    - navigation.tabs
+#    - navigation.tabs.sticky
+#    - navigation.top
+#    - navigation.tracking
+#    - search.highlight
+#    - search.share
+#    - search.suggest
+#    - toc.follow
 
-markdown_extensions:
-  - abbr
-  - meta
-  - pymdownx.highlight
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - admonition
-  - attr_list
-  - footnotes
-  - md_in_html
-  - pymdownx.tilde
-  - pymdownx.snippets
-  - toc:
-      permalink: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+#markdown_extensions:
+#  - abbr
+#  - meta
+#  - pymdownx.highlight
+#  - pymdownx.details
+#  - pymdownx.superfences
+#  - pymdownx.tabbed:
+#      alternate_style: true
+#  - admonition
+#  - attr_list
+#  - footnotes
+#  - md_in_html
+#  - pymdownx.tilde
+#  - pymdownx.snippets
+#  - toc:
+#      permalink: true
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:material.extensions.emoji.twemoji
+#      emoji_generator: !!python/name:material.extensions.emoji.to_svg
