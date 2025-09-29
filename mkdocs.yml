@@ -4,6 +4,8 @@ site_author: Mathod
 nav:
   - Home: home.md
   - Kubernetes:
+    - Tips: kubernetes/tips.md
+    - Aliases: kubernetes/aliases.md
     - Probes: about/probes.md
   - Apps:
     - Argo:
@@ -70,20 +72,22 @@ theme:
 #    - search.suggest
 #    - toc.follow
 #
-#markdown_extensions:
-#  - abbr
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
 #  - meta
-#  - pymdownx.highlight
-#  - pymdownx.details
-#  - pymdownx.superfences
-#  - pymdownx.tabbed:
-#      alternate_style: true
-#  - admonition
-#  - attr_list
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 #  - footnotes
 #  - md_in_html
-#  - pymdownx.tilde
-#  - pymdownx.snippets
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets
 #  - toc:
 #      permalink: true
 #  - pymdownx.emoji:
