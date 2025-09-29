@@ -2,7 +2,25 @@ site_name: DevOps journey
 site_author: Mathod
 
 nav:
-  - Home: index.md
+  - Home: home.md
+  - Kubernetes:
+    - Probes: about/probes.md
+  - Apps:
+    - Argo:
+      - CD: about/cd.md
+      - Workflows: about/Workflows.md
+      - Events: about/Events.md
+      - Rollouts: about/Rollouts.md
+    - Cilium: about/cilium.md
+    - Istio: about/istio.md
+    - Kargo: about/kargo.md
+    - Karpenter: about/karpenter.md
+    - Keda: about/keda.md
+    - Kyverno: about/kyverno.md
+    - Prometheus: about/prometheus.md
+  - Glossaire: glossaire.md
+  - About:
+    - About: about/index.md
 
 theme:
   name: material
@@ -15,6 +33,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
 #  features:
 #    - content.action.edit
 #    - content.action.view
@@ -33,7 +52,7 @@ theme:
 #    - search.share
 #    - search.suggest
 #    - toc.follow
-
+#
 #markdown_extensions:
 #  - abbr
 #  - meta
@@ -53,3 +72,4 @@ theme:
 #  - pymdownx.emoji:
 #      emoji_index: !!python/name:material.extensions.emoji.twemoji
 #      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+#
