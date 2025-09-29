@@ -12,36 +12,53 @@ nav:
       - Events: about/Events.md
       - Rollouts: about/Rollouts.md
     - Cilium: about/cilium.md
+    - Crossplane: about/crossplane.md
     - Istio: about/istio.md
     - Kargo: about/kargo.md
     - Karpenter: about/karpenter.md
     - Keda: about/keda.md
+    - Kustomize: about/kustomize.md
     - Kyverno: about/kyverno.md
     - Prometheus: about/prometheus.md
+    - Velero: about/velero.md
   - Glossaire: glossaire.md
+  - Blog:
+    - blog/index.md
   - About:
     - About: about/index.md
+
+plugins:
+  - search
+  - blog:
+      enabled: true
+      blog_dir: blog
+      post_dir: "{blog}/posts"
+  - tags:
+      enabled: true
 
 theme:
   name: material
   palette:
     - scheme: default
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+        icon: material/toggle-switch
+        name: Dark mode
+      primary: red
     - scheme: slate
       toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+        icon: material/toggle-switch-off-outline
+        name: Light mode
+      primary: teal
 
-#  features:
+  features:
+    - navigation.indexes
 #    - content.action.edit
 #    - content.action.view
 #    - content.code.annotate
 #    - content.code.copy
 #    - content.tooltips
 #    - header.autohide
-#    - navigation.footer
+    - navigation.footer
 #    - navigation.instant
 #    - navigation.sections
 #    - navigation.tabs
@@ -73,3 +90,11 @@ theme:
 #      emoji_index: !!python/name:material.extensions.emoji.twemoji
 #      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 #
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Mathod95
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mathod/
