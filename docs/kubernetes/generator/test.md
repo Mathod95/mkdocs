@@ -1,21 +1,31 @@
 <form id="configForm">
-    <label for="appname">APPNAME:</label>
-    <input type="text" id="appname" name="appname" placeholder="ex. myapp" required>
-    
-    <label for="port">APPLICATION_PORT:</label>
-    <input type="number" id="port" name="port" placeholder="ex. 443" required>
-    
-    <label for="configPath">/CONFIG:</label>
-    <input type="text" id="configPath" name="configPath" placeholder="ex. /config/myapp" required>
-    
-    <label for="imageTag">DOCKER/IMAGE:TAG:</label>
-    <input type="text" id="imageTag" name="imageTag" placeholder="ex. myapp/image:v1" required>
-    
-    <label for="enableMonitoring">Activer Monitoring</label>
-    <input type="checkbox" id="enableMonitoring" name="enableMonitoring">
-    
+    <div class="form-group">
+        <label for="appname">APPNAME:</label>
+        <input type="text" id="appname" name="appname" placeholder="ex. myapp" required>
+    </div>
+
+    <div class="form-group">
+        <label for="port">APPLICATION_PORT:</label>
+        <input type="number" id="port" name="port" placeholder="ex. 443" required>
+    </div>
+
+    <div class="form-group">
+        <label for="configPath">/CONFIG:</label>
+        <input type="text" id="configPath" name="configPath" placeholder="ex. /config/myapp" required>
+    </div>
+
+    <div class="form-group">
+        <label for="imageTag">DOCKER/IMAGE:TAG:</label>
+        <input type="text" id="imageTag" name="imageTag" placeholder="ex. myapp/image:v1" required>
+    </div>
+
+    <div class="form-group">
+        <label for="enableMonitoring">Activer Monitoring</label>
+        <input type="checkbox" id="enableMonitoring" name="enableMonitoring">
+    </div>
+
     <!-- Bouton Generate centré -->
-    <button type="button" id="generateButton" class="md-button md-button--primary" style="display: block; margin: 20px auto;">Generate</button>
+    <button type="button" id="generateButton" class="md-button md-button--primary">Generate</button>
 </form>
 
 <h2>Exemple de code avec vos variables :</h2>
@@ -53,6 +63,29 @@ networks:
   saltbox:
     external: true
 </code></pre>
+
+<style>
+    #configForm .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;  /* Espacer chaque groupe de champs */
+    }
+
+    #configForm label {
+        margin-right: 10px;  /* Ajouter un espacement entre le label et le champ */
+        width: 200px;  /* Définir une largeur pour les labels */
+    }
+
+    #configForm input {
+        flex: 1;  /* Prendre tout l'espace restant pour l'input */
+        padding: 8px;  /* Ajouter un peu de padding pour améliorer l'apparence */
+    }
+
+    #generateButton {
+        display: block;
+        margin: 20px auto;  /* Centrer le bouton */
+    }
+</style>
 
 <script>
     document.getElementById('generateButton').addEventListener('click', function(event) {
