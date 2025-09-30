@@ -14,7 +14,8 @@
     <label for="enableMonitoring">Activer Monitoring</label>
     <input type="checkbox" id="enableMonitoring" name="enableMonitoring">
     
-    <button type="submit">Soumettre</button>
+    <!-- Bouton Generate centré -->
+    <button type="button" id="generateButton" class="md-button md-button--primary" style="display: block; margin: 20px auto;">Generate</button>
 </form>
 
 <h2>Exemple de code avec vos variables :</h2>
@@ -54,7 +55,7 @@ networks:
 </code></pre>
 
 <script>
-    document.getElementById('configForm').addEventListener('submit', function(event) {
+    document.getElementById('generateButton').addEventListener('click', function(event) {
         event.preventDefault();  // Empêcher le rechargement de la page
         
         // Récupérer les valeurs saisies dans le formulaire
