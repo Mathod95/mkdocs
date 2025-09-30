@@ -22,11 +22,15 @@ nav:
     - Karpenter: about/karpenter.md
     - Keda: about/keda.md
     - Kustomize: about/kustomize.md
+    - Kube-score: about/kube-score.md
+    - KubeBlocks: about/kubeblocks.md
     - Kyverno: about/kyverno.md
     - Prometheus: about/prometheus.md
     - Velero: about/velero.md
     - Helm:
         - Cheatsheet: apps/helm/cheatsheet.md
+
+  - Awesome: awesome.md
 
   - Glossaire: glossaire.md
   
