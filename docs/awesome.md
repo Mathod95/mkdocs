@@ -1,8 +1,11 @@
 ---
 prompt: Description format twitter
 ---
+#
 
-![Awesome Logo](https://github.com/sindresorhus/awesome/raw/main/media/logo.svg)
+<a href="https://github.com/sindresorhus/awesome" target="_blank">
+  <img src="https://github.com/sindresorhus/awesome/raw/main/media/logo.svg" />
+</a>
 
 <a href="https://github.com/louislam/uptime-kuma" target="_blank">
   <img src="https://opengraph.githubassets.com/Mathod/louislam/uptime-kuma" />
