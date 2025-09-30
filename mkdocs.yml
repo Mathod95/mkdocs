@@ -30,9 +30,16 @@ nav:
     - Helm:
         - Cheatsheet: apps/helm/cheatsheet.md
 
+  - NixOS:
+    - MyEnv: nixos/packages/packages.md
+    - HomeManager: nixos/packages/home-manager.md
+    - Hyprland: nixos/packages/hyprland.md
+    - Packages:
+      - Vim: nixos/packages/vim.md
+
   - Awesome: awesome.md
 
-  - Glossaire: glossaire.md
+  - Glossaire: glossary.md
   
   - Blog:
     - blog/index.md
