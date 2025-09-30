@@ -8,6 +8,7 @@ nav:
     - Tips: kubernetes/tips.md
     - Aliases: kubernetes/aliases.md
     - Probes: about/probes.md
+    - Generator: kubernetes/generator/test.md
 
   - Apps:
     - Argo:
@@ -55,6 +56,11 @@ plugins:
       post_dir: "{blog}/posts"
   - tags:
       enabled: true
+  - toggle-sidebar: # https://github.com/six-two/mkdocs-toggle-sidebar-plugin
+      show_navigation_by_default: True
+      show_toc_by_default: True
+      theme: material
+      toggle_button: all
 
 theme:
   name: material
@@ -112,6 +118,8 @@ markdown_extensions:
 #      emoji_index: !!python/name:material.extensions.emoji.twemoji
 #      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 #
+
+
 
 extra:
   generator: false
