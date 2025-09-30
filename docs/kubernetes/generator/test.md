@@ -55,6 +55,8 @@ services:
       traefik.http.routers.APPNAME.rule: Host(\`APPNAME.yourdomain.com\`)
       traefik.http.routers.APPNAME.service: APPNAME
       traefik.http.routers.APPNAME.tls.certresolver: cfdns
+      traefik.http.routers.APPNAME.tls.options: securetls@file 
+      traefik.http.services.APPNAME.loadbalancer.server.port: APPLICATION_PORT
     volumes:
       - /opt/APPNAME:/CONFIG
       - /etc/localtime:/etc/localtime:ro
@@ -101,8 +103,46 @@ networks:
         // Obtenir le bloc YAML
         var yamlBlock = document.getElementById('yamlBlock');
         
-        // Remplacer dynamiquement les variables dans le bloc YAML
-        var yamlContent = yamlBlock.textContent
+        // Définir un template de YAML de base
+        var yamlTemplate = `
+services:
+  APPNAME:
+    restart: unless-stopped
+    container_name: APPNAME
+    image: DOCKER/IMAGE:TAG
+    hostname: APPNAME
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    networks:
+      - saltbox
+    labels:
+      com.github.saltbox.saltbox_managed: true
+      diun.enable: true
+      traefik.enable: true
+      traefik.http.routers.APPNAME-http.entrypoints: web
+      traefik.http.routers.APPNAME-http.middlewares: globalHeaders@file,redirect-to-https@docker,robotHeaders@file,cloudflarewarp@docker,authelia@docker
+      traefik.http.routers.APPNAME-http.rule: Host(\`APPNAME.yourdomain.com\`)
+      traefik.http.routers.APPNAME-http.service: APPNAME
+      traefik.http.routers.APPNAME.entrypoints: websecure
+      traefik.http.routers.APPNAME.middlewares: globalHeaders@file,secureHeaders@file,robotHeaders@file,cloudflarewarp@docker,authelia@docker
+      traefik.http.routers.APPNAME.rule: Host(\`APPNAME.yourdomain.com\`)
+      traefik.http.routers.APPNAME.service: APPNAME
+      traefik.http.routers.APPNAME.tls.certresolver: cfdns
+      traefik.http.routers.APPNAME.tls.options: securetls@file 
+      traefik.http.services.APPNAME.loadbalancer.server.port: APPLICATION_PORT
+    volumes:
+      - /opt/APPNAME:/CONFIG
+      - /etc/localtime:/etc/localtime:ro
+
+networks:
+  saltbox:
+    external: true
+`;
+
+        // Remplacer dynamiquement les variables dans le template YAML
+        var yamlContent = yamlTemplate
             .replace(/APPNAME/g, appname)                   // Remplacer APPNAME par la valeur saisie
             .replace(/APPLICATION_PORT/g, port)            // Remplacer APPLICATION_PORT par la valeur saisie
             .replace(/\/CONFIG/g, configPath)              // Remplacer /CONFIG par la valeur saisie
@@ -120,7 +160,7 @@ networks:
 
             // Vérifier si la ligne de monitoring est déjà présente dans le bloc YAML
             if (!yamlContent.includes(monitoringLine)) {
-                // Trouver la section "labels:"
+                // Trouver la section "labels:" et ajouter la ligne de monitoring après la section labels
                 var labelsIndex = yamlContent.indexOf('labels:');
                 if (labelsIndex !== -1) {
                     // Trouver la fin de la section labels (première ligne vide après labels)
