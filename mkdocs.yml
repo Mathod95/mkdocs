@@ -2,11 +2,13 @@ site_name: DevOps journey
 site_author: Mathod
 
 nav:
-  - Home: home.md
+  - Home: index.md
+
   - Kubernetes:
     - Tips: kubernetes/tips.md
     - Aliases: kubernetes/aliases.md
     - Probes: about/probes.md
+
   - Apps:
     - Argo:
       - CD: about/cd.md
@@ -23,9 +25,14 @@ nav:
     - Kyverno: about/kyverno.md
     - Prometheus: about/prometheus.md
     - Velero: about/velero.md
+    - Helm:
+        - Cheatsheet: apps/helm/cheatsheet.md
+
   - Glossaire: glossaire.md
+  
   - Blog:
     - blog/index.md
+  
   - About:
     - About: about/index.md
 
