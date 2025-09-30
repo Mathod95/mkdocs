@@ -1,0 +1,65 @@
+# TASK
+https://wiki.nixos.org/wiki/Fonts
+
+- [ ] Install home-manager as a module of nixos
+	- [ ] Deploy zsh configuration with home-manager https://www.youtube.com/watch?v=bFmvnJVd5yQ
+
+- [ ] Hyprland
+	- [ ] https://github.com/JaKooLit/NixOS-Hyprland
+	- [ ] https://github.com/maotseantonio/shizuru
+	- [ ] Hyprlock
+		- [ ] hyprland.conf https://github.com/maotseantonio/NixOS-Hyprland
+	- [ ] hypridle
+	- [ ] hyprpolkitagent
+	- [ ] hyprcursor https://www.youtube.com/watch?v=uZDPXFQYz0Q&t=2175s
+	- [ ] hyprpm
+		- [ ] hyprbars
+			- [ ] https://www.reddit.com/r/hyprland/comments/1cyaz4u/i_like_hyprbars_thats_all/
+- [ ] Home-Manager
+	- [ ] home.nix
+- [ ] Packages
+	- [ ] argocd
+	- [ ] awscli2
+	- [x] bat
+	- [x] btop
+	- [x] cilium-cli
+	- [x] crossplane-cli
+	- [ ] curl
+	- [ ] docker
+		- [ ] Install docker rootless https://wiki.nixos.org/wiki/Docker
+	- [x] eza
+	- [ ] fastfetch
+	- [x] fd
+	- [x] fzf
+	- [x] git
+	- [x] httpie
+	- [x] k9s
+	- [ ] keychain
+	- [x] kind
+	- [ ] kitty
+	- [x] kube-linter
+	- [x] kube-score
+	- [ ] kubectl
+	- [ ] kubecolor
+	- [x] kubectx
+	- [x] kubescape
+	- [x] krew
+	- [x] kubernetes-helm
+	- [x] kustomize
+	- [x] kyverno
+	- [ ] neovim
+		- [ ] nvchad
+	- [x] opentofu
+	- [ ] ssh
+	- [ ] tlrc
+	- [x] velero
+	- [ ] vim
+	- [ ] vscode
+	- [x] wget
+	- [ ] zellij
+	- [ ] zsh
+		- [ ] https://wiki.nixos.org/wiki/Zsh
+		- [ ] zinit
+			- [ ] zsh-abbr
+			- [ ] zsh-autosuggeestions
+			- [ ] zsh-autocomplete
