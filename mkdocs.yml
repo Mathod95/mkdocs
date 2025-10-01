@@ -1,5 +1,7 @@
 site_name: DevOps journey
 site_author: Mathod
+site_url: https://mkdocs.mathod.fr/
+repo_url: https://github.com/Mathod95/mkdocs
 
 nav:
   - Home: index.md
@@ -12,8 +14,8 @@ nav:
 
   - Apps:
     - Argo:
-      - CD: about/cd.md
-      - Workflows: about/Workflows.md
+      - CD: template.md
+      - Workflows: test.md
       - Events: about/Events.md
       - Rollouts: about/Rollouts.md
     - Cilium: about/cilium.md
@@ -41,6 +43,8 @@ nav:
   - Awesome: awesome.md
 
   - Glossaire: glossary.md
+
+  - Tags: tags.md
   
   - Blog:
     - blog/index.md
@@ -75,27 +79,30 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Light mode
       primary: teal
-
   features:
-    - navigation.indexes
-#    - content.action.edit
-#    - content.action.view
+    # Setting up navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+#    - navigation.tracking # Already on ?
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+#    - navigation.path # Not Working ?
+#    - navigation.indexes # Usefull ?
+    - toc.follow
+    - navigation.top
+    # Setting up site search
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.action.view
 #    - content.code.annotate
 #    - content.code.copy
 #    - content.tooltips
-#    - header.autohide
+    - header.autohide
     - navigation.footer
-#    - navigation.instant
-#    - navigation.sections
-#    - navigation.tabs
-#    - navigation.tabs.sticky
-#    - navigation.top
-#    - navigation.tracking
-#    - search.highlight
-#    - search.share
-#    - search.suggest
-#    - toc.follow
-#
+
 markdown_extensions:
   - abbr
   - admonition
@@ -112,14 +119,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.snippets
-#  - toc:
+  - toc:
+      toc_depth: 6
 #      permalink: true
 #  - pymdownx.emoji:
 #      emoji_index: !!python/name:material.extensions.emoji.twemoji
 #      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 #
-
-
 
 extra:
   generator: false
