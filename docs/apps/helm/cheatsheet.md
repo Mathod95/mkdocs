@@ -22,7 +22,7 @@ Helm cheatsheet featuring all the necessary commands required to manage an appli
 
 ## Commands
 ### Chart Management
-```YAML
+``` yaml title="bubble_sort.py" hl_lines="2 3" linenums="1" 
 helm create <name>                      # Creates a chart directory along with the common files and directories used in a chart.
 helm package <chart-path>               # Packages a chart into a versioned chart archive file.
 helm lint <chart>                       # Run tests to examine a chart and identify possible issues:
@@ -34,6 +34,19 @@ helm pull <chart> --verify              # Verify the package before using it
 helm pull <chart> --version <number>    # Default-latest is used, specify a version constraint for the chart version to use
 helm dependency list <chart>            # Display a list of a chart’s dependencies:
 ```
+
+``` yaml
+theme:
+  features:
+    - content.code.annotate # (1)
+```
+
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be written in Markdown.
+
+The HTML specification is maintained by the W3C.
+K8S
+
 ### Install and Uninstall Apps
 ```YAML
 helm install <name> <chart>                           # Install the chart with a name

@@ -2,6 +2,7 @@ site_name: DevOps journey
 site_author: Mathod
 site_url: https://mkdocs.mathod.fr/
 repo_url: https://github.com/Mathod95/mkdocs
+edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
@@ -42,7 +43,7 @@ nav:
 
   - Awesome: awesome.md
 
-  - Glossaire: glossary.md
+  - Glossaire: glosarry.md
 
   - Tags: tags.md
   
@@ -87,7 +88,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.expand
-#    - navigation.path # Not Working ?
+#    - navigation.path # Not working ?
 #    - navigation.indexes # Usefull ?
     - toc.follow
     - navigation.top
@@ -97,35 +98,44 @@ theme:
     - search.share
     - content.action.edit
     - content.action.view
-#    - content.code.annotate
-#    - content.code.copy
+    # Code blocks - https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+    - content.code.copy
+    - content.code.select # Not working ?
+    - content.code.annotate
 #    - content.tooltips
     - header.autohide
     - navigation.footer
 
+# Python Markdown - https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
 markdown_extensions:
   - abbr
   - admonition
   - attr_list
 #  - meta
-  - pymdownx.highlight
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-#  - footnotes
-#  - md_in_html
+  # Python Markdown Extensions - https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
-  - pymdownx.snippets
+  - pymdownx.details
+  #- pymdownx.emoji:
+  #    emoji_index: !!python/name:material.extensions.emoji.twemoji
+  #    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+#  - footnotes
+#  - md_in_html
   - toc:
       toc_depth: 6
 #      permalink: true
-#  - pymdownx.emoji:
-#      emoji_index: !!python/name:material.extensions.emoji.twemoji
-#      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-#
 
 extra:
   generator: false
@@ -134,3 +144,6 @@ extra:
       link: https://github.com/Mathod95
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/mathod/
+
+watch:
+  - includes
