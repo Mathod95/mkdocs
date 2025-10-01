@@ -111,31 +111,36 @@ markdown_extensions:
   - abbr
   - admonition
   - attr_list
-#  - meta
+  - def_list
+  - md_in_html
+  - toc:
+      toc_depth: 6
+      permalink: true
+  - tables # Can be sort if configured
+  - meta
   # Python Markdown Extensions - https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
+  - pymdownx.critic
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.details
-  #- pymdownx.emoji:
-  #    emoji_index: !!python/name:material.extensions.emoji.twemoji
-  #    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-
-#  - footnotes
-#  - md_in_html
-  - toc:
-      toc_depth: 6
-#      permalink: true
 
 extra:
   generator: false
