@@ -8,6 +8,8 @@ nav:
   - Home: index.md
 
   - Kubernetes:
+    - Objets:
+      - Namespace: kubernetes/objets/namespace.md
     - Tips: kubernetes/tips.md
     - Aliases: kubernetes/aliases.md
     - Probes: about/probes.md
@@ -15,20 +17,28 @@ nav:
 
   - Apps:
     - Argo:
-      - CD: template.md
+      - CD:
+        - Autopilot: apps/argo/cd/autopilot/argo-cd-autopilot.md
       - Workflows: test.md
       - Events: about/Events.md
       - Rollouts: about/Rollouts.md
     - Cilium: about/cilium.md
-    - Crossplane: about/crossplane.md
+    - Crossplane: 
+      - Crossplane: apps/crossplane/crossplane.md
+      - Import: apps/crossplane/import.md
+      - Providers:
+        - ArgoCD: apps/crossplane/providers/argocd/crossplane_providers_argocd.md
     - Istio: about/istio.md
     - Kargo: about/kargo.md
     - Karpenter: about/karpenter.md
     - Keda: about/keda.md
+    - KinD:
+      - KinD: apps/kind/kind.md
+      - Cheatsheet: apps/kind/cheatsheet.md
     - Kustomize: about/kustomize.md
     - Kube-score: about/kube-score.md
     - KubeBlocks: about/kubeblocks.md
-    - Kyverno: about/kyverno.md
+    - Kyverno: apps/kyverno/kyverno.md
     - Prometheus: about/prometheus.md
     - Velero: about/velero.md
     - Helm:

@@ -36,3 +36,15 @@ Komoplane est une WebUI open source basée sur Crossplane qui facilite la gestio
 </a>
 Flood est une interface web moderne pour contrôler rTorrent, qBittorrent, Deluge ou Transmission. Élégant, auto-hébergeable, et conçu pour gérer à distance vos torrents. #Torrent #WebUI #OpenSource
 ---
+
+<a href="https://github.com/argoproj-labs/rollout-extension" target="_blank">
+  <img src="https://opengraph.githubassets.com/Mathod/argoproj-labs/rollout-extension" />
+</a>
+Rollout Extension est un plugin open source pour Argo CD qui facilite la gestion des déploiements progressifs et des stratégies de mise à jour avancées, améliorant la fiabilité des livraisons continues. #Kubernetes #GitOps #DevOps
+---
+
+<a href="https://github.com/argoproj-labs/argocd-extension-installer" target="_blank">
+  <img src="https://opengraph.githubassets.com/Mathod/argoproj-labs/argocd-extension-installer" />
+</a>
+ArgoCD Extension Installer est un outil open source qui simplifie l'installation et la gestion des extensions dans Argo CD, rendant la plateforme plus modulaire et personnalisable. #GitOps #DevOps #Kubernetes
+---

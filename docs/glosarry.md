@@ -1,55 +1,30 @@
 # A
+`Argo` 
+: Argo est une suite d'outils open source pour Kubernetes, conçue pour gérer les workflows, les déploiements et l'automatisation. Elle est particulièrement utilisée dans les environnements DevOps et CI/CD natifs Kubernetes.
 # B
 # C
 # D
-
-1.  Vivamus id mi enim. Integer id turpis sapien. Ut condimentum lobortis
-    sagittis. Aliquam purus tellus, faucibus eget urna at, iaculis venenatis
-    nulla. Vivamus a pharetra leo.
-
-    1.  Vivamus venenatis porttitor tortor sit amet rutrum. Pellentesque aliquet
-        quam enim, eu volutpat urna rutrum a. Nam vehicula nunc mauris, a
-        ultricies libero efficitur sed.
-
-    2.  Morbi eget dapibus felis. Vivamus venenatis porttitor tortor sit amet
-        rutrum. Pellentesque aliquet quam enim, eu volutpat urna rutrum a.
-
-        1.  Mauris dictum mi lacus
-        2.  Ut sit amet placerat ante
-        3.  Suspendisse ac eros arcu
-
 # E
 # F
 # G
-`Lorem ipsum dolor sit amet`
-
-:   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
-    tellus non sem sollicitudin, quis rutrum leo facilisis.
-
-`Cras arcu libero`
-
-:   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin
-    ut eros sed sapien ullamcorper consequat. Nunc ligula ante.
-
-    Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
-    Nam vulputate tincidunt fringilla.
-    Nullam dignissim ultrices urna non auctor.
-
 # H
 # I
 # J
 # K
-- KinD
+`KinD`
+: KinD (Kubernetes IN Docker) est un outil permettant de créer des clusters Kubernetes locaux à l’aide de conteneurs Docker. Il est principalement utilisé pour le développement, les tests CI/CD, ou l'expérimentation avec Kubernetes, sans avoir besoin de déployer un cluster sur le cloud.
 # L
 # M
 # N
-- N8N: https://github.com/n8n-io/n8n
+`N8N`
+: Outil d’automatisation open source permettant de créer des workflows visuels pour connecter des applications et services.
 # O
 # P
 # Q
 # R
 # S
-- Sailor.sh
+`sailor.sh`
+: Simulateur gratuit en ligne d’examens Kubernetes (CKA, CKAD, CKS) offrant des laboratoires pratiques et des scénarios réalistes pour s’entraîner.
 # T
 # U
 # V
@@ -57,3 +32,5 @@
 # X
 # Y
 # Z
+`ZSH`
+: Shell Unix puissant et personnalisable, alternatif à Bash, souvent utilisé avec des frameworks comme Oh My Zsh.
