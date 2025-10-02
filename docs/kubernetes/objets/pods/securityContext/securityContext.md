@@ -1,4 +1,4 @@
-
+# Security context
 Le champ `securityContext` d'un pod dans Kubernetes est une partie fondamentale pour la protection d'une application. Il permet aux administrateurs et aux développeurs de définir les paramètres de privilèges et de contrôle d'accès pour les pods et les conteneurs. Cet article offre un aperçu détaillé des meilleures pratiques pour configurer les contextes de sécurité dans Kubernetes avec des extraits de code pour illustrer chaque pratique.
 
 # Understanding Kubernetes Security Contexts
@@ -11,7 +11,7 @@ The following are key best practices for setting security contexts in Kubernetes
 
 # Exécuter un container avec user non root
 
-```yaml title:"pod.yaml"
+``` yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -29,7 +29,7 @@ spec:
 
 La désactivation de l'escalade de privilèges empêche l'utilisation d'outils tels que `sudo` qui peuvent accorder des droits élevés à des processus.
 
-```yaml title:"pod.yaml"
+``` yaml
 apiVersion: v1  
 kind: Pod  
 metadata:  
@@ -46,7 +46,7 @@ spec:
 
 Limit the Linux capabilities granted to a container to only those that are necessary for the application. This example removes all default capabilities and explicitly adds only the  `NET_BIND_SERVICE`  capability:
 
-```yaml
+``` yaml
 apiVersion: v1  
 kind: Pod  
 metadata:  
@@ -67,7 +67,7 @@ spec:
 
 Making the root filesystem read-only where possible will prevent any tampering with critical system files:
 
-```yaml
+``` yaml
 securityContext:
   readOnlyRootFilesystem: true
 ```
@@ -76,7 +76,7 @@ securityContext:
 
 Seccomp (Secure Computing Mode) is a kernel security feature that restricts the set of system calls applications can make. Here’s how to specify a default seccomp profile for your containers:
 
-```yaml
+``` yaml
 securityContext:
   seccompProfile:
     type: RuntimeDefault
@@ -86,7 +86,7 @@ securityContext:
 
 If SELinux is enforced in your environment, you can specify SELinux options for more granular security control:
 
-```yaml
+``` yaml
 securityContext:
   seLinuxOptions:
     level: "s0:c123,c456"
@@ -96,7 +96,7 @@ securityContext:
 
 For settings that you want to apply to all containers within a pod, use the pod-level security context. This example sets a common user and group ID for all containers in the pod:
 
-```yaml
+``` yaml
 apiVersion: v1
 kind: Pod
 metadata:

@@ -6,19 +6,15 @@ edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
-
   - Kubernetes:
     - Objets:
-      #- Namespace: 
       - Namespace: kubernetes/objets/namespace/namespace.md
       - Pods:
         - Probes: kubernetes/objets/pods/probes/probes.md
         - Security Context: kubernetes/objets/pods/securityContext/securityContext.md
     - Tips: kubernetes/tips.md
     - Aliases: kubernetes/aliases.md
-    - Probes: about/probes.md
     - Generator: kubernetes/generator/test.md
-
   - Apps:
     - Argo:
       - CD:
@@ -28,7 +24,7 @@ nav:
       - Rollouts: about/Rollouts.md
     - Cilium: about/cilium.md
     - Crossplane: 
-      - Crossplane: apps/crossplane/crossplane.md
+      - apps/crossplane/index.md
       - Import: apps/crossplane/import.md
       - Providers:
         - ArgoCD: apps/crossplane/providers/argocd/crossplane_providers_argocd.md
@@ -47,23 +43,17 @@ nav:
     - Velero: about/velero.md
     - Helm:
         - Cheatsheet: apps/helm/cheatsheet.md
-
   - NixOS:
     - MyEnv: nixos/packages/packages.md
     - HomeManager: nixos/packages/home-manager.md
     - Hyprland: nixos/packages/hyprland.md
     - Packages:
       - Vim: nixos/packages/vim.md
-
   - Awesome: awesome.md
-
   - Glossaire: glosarry.md
-
   - Tags: tags.md
-  
   - Blog:
     - blog/index.md
-  
   - About:
     - About: about/index.md
 
@@ -97,13 +87,13 @@ theme:
   features:
     # Setting up navigation
     - navigation.instant
-    - navigation.instant.prefetch
-#    - navigation.tracking # Already on ?
+#    - navigation.instant.prefetch # Sponsors only
+    - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.expand
-#    - navigation.path # Not working ?
-#    - navigation.indexes # Usefull ?
+#    - navigation.path # Sponsors only
+    - navigation.indexes
     - toc.follow
     - navigation.top
     # Setting up site search
@@ -114,9 +104,9 @@ theme:
     - content.action.view
     # Code blocks - https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
     - content.code.copy
-    - content.code.select # Not working ?
+#    - content.code.select # Sponsors only
     - content.code.annotate
-#    - content.tooltips
+    - content.tooltips
     - header.autohide
     - navigation.footer
 
