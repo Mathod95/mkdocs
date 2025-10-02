@@ -9,7 +9,11 @@ nav:
 
   - Kubernetes:
     - Objets:
-      - Namespace: kubernetes/objets/namespace.md
+      #- Namespace: 
+      - Namespace: kubernetes/objets/namespace/namespace.md
+      - Pods:
+        - Probes: kubernetes/objets/pods/probes/probes.md
+        - Security Context: kubernetes/objets/pods/securityContext/securityContext.md
     - Tips: kubernetes/tips.md
     - Aliases: kubernetes/aliases.md
     - Probes: about/probes.md
