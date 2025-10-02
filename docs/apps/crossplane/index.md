@@ -1,9 +1,9 @@
-# Introduction
-# Objectifs
-# Prérequis
-# Ma configuration
+## Introduction
+### Objectifs
+### Prérequis
+### Ma configuration
 ---
-# How to create a composition with crossplane
+## How to create a composition with crossplane
 
 Crossplane has four core components that users commonly mix up:
 
@@ -16,44 +16,30 @@ Crossplane has four core components that users commonly mix up:
 - [Claims (XRC)](https://docs.crossplane.io/latest/concepts/claims/) - Like a Composite Resource, but with namespace scoping.
 
 Here's how to create these compositions in the crossplane repo
-
     .
-
     └── compositions
-
         ├── eks
-
         │   ├── claim.yaml
-
         │   ├── composition.yaml
-
         │   └── definitions.yaml
-
         ├── s3
-
         │   ├── claim.yaml
-
         │   ├── composition.yaml
-
         │   └── definitions.yaml
-
         └── rds
-
             ├── claim.yaml
-
             ├── composition.yaml
-
             └── definitions.yaml
 
 If you’re coming from the Terraform world (I'm talking to you @KennySalibovitchky) you can think of an XRD as similar to the variable blocks of a Terraform module, while the Composition is the rest of the module’s HCL code that describes how to use those variables to create a bunch of resources. In this analogy the XR or claim is a little like a tfvars file providing inputs to the module.
 
-# Provision a S3 Bucket with Crossplane
+## Provision a S3 Bucket with Crossplane
 
 __The crossplane core Controller and the Provider AWS Controller should now be ready to provision any infrastructure component in AWS!__
 
 Therefore we can have a look into the Crossplane AWS provider API docs:https://doc.crds.dev/github.com/upbound/provider-aws/s3.aws.upbound.io/Bucket/v1beta1@v0.45.0
 
-## Defining a CompositeResourceDefinition (XRD) for our S3 Bucket
+### Defining a CompositeResourceDefinition (XRD) for our S3 Bucket
 
 > A CompositeResourceDefinition (or XRD) defines the type and schema of your XR. It lets Crossplane know that you want a particular kind of XR to exist, and what fields that XR should have.
 
@@ -78,7 +64,7 @@ Note that Crossplane will be automatically extended this section. Therefore the 
 
 So our Composite Resource Definition (XRD) for our S3 Bucket could look like [compositions/s3/definitions.yaml](compositions/s3/definitions.yaml):
 
-```yaml
+``` yaml
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
@@ -131,13 +117,13 @@ spec:
 
 Install the XRD into our cluster with:
 
-```shell ln:false hl:1
+``` bash 
 kubectl apply -f compositions/s3/definitions.yaml
 ```
 
 We can double check the CRDs beeing created with `kubectl get crds` and filter them using `grep` to our group name `crossplane.evina`:
 
-```shell ln:false hl:1
+``` bash 
 kubectl get crds | grep crossplane.evina
 objectstorages.crossplane.evina                                2024-01-04T15:38:50Z
 xobjectstorages.crossplane.evina                               2024-01-04T15:38:50Z
@@ -145,7 +131,7 @@ xobjectstorages.crossplane.evina                               20
 
 ---
 
-## Craft a Composition to manage our needed cloud resources
+### Craft a Composition to manage our needed cloud resources
 
 The main work in Crossplane has to be done crafting the Compositions. This is because they interact with the infrastructure primitives the cloud provider APIs provide.
 
@@ -153,7 +139,7 @@ Detailled docs to many of the possible manifest configurations can be found here
 
 https://marketplace.upbound.io/providers/upbound/provider-aws-s3/latest
 
-```yaml
+``` yaml
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
@@ -265,7 +251,7 @@ spec:
 
 Let's create Composition via:
 
-```shell hl:1 ln:false
+``` bash 
 kubectl apply -f compositions/s3/composition.yaml
 ```
 
@@ -279,7 +265,7 @@ https://docs.crossplane.io/v1.14/concepts/composite-resources/
 
 Since we want to create a S3 Bucket, here's an suggestion for an [claim.yaml](crossplane-contrib/provider-aws/s3/claim.yaml):
 
-```yaml
+``` yaml
 # Use the spec.group/spec.versions[0].name defined in the XRD
 apiVersion: crossplane.jonashackt.io/v1alpha1
 kind: ObjectStorage
@@ -301,13 +287,13 @@ spec:
 
 Testdrive with:
 
-```shell ln:false hl:1
+``` bash 
 kubectl apply -f crossplane-contrib/provider-aws/s3/claim.yaml
 ```
 
 When somthing goes wrong with the validation, this could look like this:
 
-```shell ln:false hl:1 error:3
+``` shell 
 kubectl apply -f claim.yaml
 
 error: error validating "claim.yaml": error validating data: [ValidationError(S3Bucket.metadata): unknown field "crossplane.io/external-name" in io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta_v2, ValidationError(S3Bucket.spec): unknown field "parameters" in io.jonashackt.crossplane.v1alpha1.S3Bucket.spec, ValidationError(S3Bucket.spec.writeConnectionSecretToRef): missing required field "namespace" in io.jonashackt.crossplane.v1alpha1.S3Bucket.spec.writeConnectionSecretToRef, ValidationError(S3Bucket.spec): missing required field "bucketName" in io.jonashackt.crossplane.v1alpha1.S3Bucket.spec, ValidationError(S3Bucket.spec): missing required field "region" in io.jonashackt.crossplane.v1alpha1.S3Bucket.spec]; if you choose to ignore these errors, turn validation off with --validate=false
@@ -327,54 +313,35 @@ kubectl get crossplane
 Warning: Please use v1beta1 version of this resource that has identical schema.
 
 NAME                                                                                          ESTABLISHED   OFFERED   AGE
-
 compositeresourcedefinition.apiextensions.crossplane.io/xs3buckets.crossplane.jonashackt.io   True          True      23m
 
-  
-
 NAME                                               AGE
-
 composition.apiextensions.crossplane.io/s3bucket   2d17h
 
-  
-
 NAME                                      INSTALLED   HEALTHY   PACKAGE                           AGE
-
 provider.pkg.crossplane.io/provider-aws   True        True      crossplanecontrib/provider-aws:v0.34.0   4d21h
 
-  
-
 NAME                                                           HEALTHY   REVISION   IMAGE                             STATE    DEP-FOUND   DEP-INSTALLED   AGE
-
 providerrevision.pkg.crossplane.io/provider-aws-2189bc61e0bd   True      1          crossplanecontrib/provider-aws:v0.34.0   Active                               4d21h
 
-  
-
 NAME                                        AGE     TYPE         DEFAULT-SCOPE
-
 storeconfig.secrets.crossplane.io/default   5d23h   Kubernetes   crossplane-system
-
 ```
 
 * `kubectl get claim`: get all resources of all claim kinds, like PostgreSQLInstance.
 * `kubectl get composite`: get all resources that are of composite kind, like XPostgreSQLInstance.
 * `kubectl get managed`: get all resources that represent a unit of external infrastructure.
-
 * `kubectl get <name-of-provider>`: get all resources related to <provider>.
-
 * `kubectl get crossplane`: get all resources related to Crossplane.
 
 We can also check our claim with `kubectl get <claim-kind> <claim-metadata.name>` like this:
 
 ```shell
-
 $ kubectl get ObjectStorage managed-s3
-
 NAME         READY   CONNECTION-SECRET               AGE
-
 managed-s3           managed-s3-connection-details   5s
-
 ```
+
 ```shell 
 zae
 ```
@@ -388,14 +355,9 @@ kubectl get crossplane -l crossplane.io/claim-name=managed-s3
 
 Check if the S3 Bucket has been created successfully via aws CLI with `aws s3 ls | grep microservice-ui-nuxt-js-static-bucket2`.
 
-
-
-` ` `shell
-
+```shell
 $ aws s3 ls | grep microservice-ui-nuxt-js-static-bucket2
-
 2022-06-27 11:56:26 microservice-ui-nuxt-js-static-bucket2
-
 ```
 
 ## Troubleshooting your crossplane configuration
@@ -407,18 +369,15 @@ https://docs.crossplane.io/knowledge-base/guides/troubleshoot/
 The docs also tell us what they mean by "follow the references":
 
 * Find your XR by running `kubectl describe <claim-kind> <claim-metadata.name>` and look for its “Resource Ref” (aka `spec.resourceRef`).
-
 * Run `kubectl describe` on your XR. This is where you’ll find out about issues with the Composition you’re using, if any.
-
 * If there are no issues but your XR doesn’t seem to be becoming ready, take a look for the “Resource Refs” (or `spec.resourceRefs`) to find your composed resources.
-
 * Run `kubectl describe` on each referenced composed resource to determine whether it is ready and what issues, if any, it is encountering.
 
 ## Remove your App
 
 Finally remove our S3 Bucket with:
 
-```shell 
+``` bash 
 kubectl delete -f upbound/provider-aws-s3/claim.yaml
 ```
 
@@ -432,48 +391,31 @@ See also https://crossplane.io/docs/v1.8/concepts/packages.html#configuration-pa
 
 Our [crossplane-contrib/provider-aws/s3/crossplane.yaml](crossplane-contrib/provider-aws/s3/crossplane.yaml) is of `kind: Configuration` and defines the minimum crossplane version needed alongside the crossplane AWS provider:
 
-```yaml
-
+``` yaml
 apiVersion: meta.pkg.crossplane.io/v1
-
 kind: Configuration
-
 metadata:
-
   name: s3-bucket-composition
-
 spec:
-
   crossplane:
-
     version: ">=v1.8"
-
   dependsOn:
-
     - provider: crossplanecontrib/provider-aws
-
       version: ">=v0.33.0"
-
 ```
 
 Having this `crossplane.yaml` in place we can build our Configuration at last. On a command line go into the directory where the `crossplane.yaml` resides and run the `kubectl crossplane build` command:
 
-```shell
-
-$ cd crossplane-s3
-
-$ kubectl crossplane build configuration
-
+``` bash
+cd crossplane-s3
+kubectl crossplane build configuration
 ```
 
 Really strange, getting
 
 ```shell
-
 kubectl crossplane build configuration
-
 kubectl crossplane: error: failed to build package: failed to parse package: {path:/Users/jonashecht/dev/kubernetes/crossplane-awws-azure/crossplane-contrib/provider-aws/s3/composition.yaml position:0}: no kind "S3Bucket" is registered for version "crossplane.jonashackt.io/v1alpha1" in scheme "/home/runner/work/crossplane/crossplane/internal/xpkg/scheme.go:47"
-
 ```
 
 ---
@@ -487,9 +429,7 @@ __What I didn't wanted to do is to duplicate some code__ into my `Composition` f
 https://github.com/upbound/platform-ref-aws#install-the-platform-configuration
 
 ```shell
-
 S3 creation error: CannotCreateExternalResource managed/bucket.s3.aws.crossplane.io failed to create the Bucket: InvalidBucketAclWithObjectOwnership: Bucket cannot have ACLs set with ObjectOwnership's BucketOwnerEnforced setting
-
 ```
 
 we need to switch over to the official AWS provider based on Upjet. Do we need to use the UXP (Universal Control Plane) flavour of Crossplane for that? No, the docs https://marketplace.upbound.io/providers/upbound/provider-aws/v0.34.0/docs/configuration state:
