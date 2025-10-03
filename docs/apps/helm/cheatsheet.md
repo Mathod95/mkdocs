@@ -28,16 +28,16 @@ Helm cheatsheet featuring all the necessary commands required to manage an appli
 ## Commands
 ### Chart Management
 ``` yaml
-helm create <name>                      # Creates a chart directory along with the common files and directories used in a chart.
-helm package <chart-path>               # Packages a chart into a versioned chart archive file.
-helm lint <chart>                       # Run tests to examine a chart and identify possible issues:
-helm show all <chart>                   # Inspect a chart and list its contents:
-helm show values <chart>                # Displays the contents of the values.yaml file
-helm pull <chart>                       # Download/pull chart 
-helm pull <chart> --untar=true          # If set to true, will untar the chart after downloading it
-helm pull <chart> --verify              # Verify the package before using it
-helm pull <chart> --version <number>    # Default-latest is used, specify a version constraint for the chart version to use
-helm dependency list <chart>            # Display a list of a chart’s dependencies:
+helm create <name>                   # Creates a chart directory along with the common files and directories used in a chart.
+helm package <chart-path>            # Packages a chart into a versioned chart archive file.
+helm lint <chart>                    # Run tests to examine a chart and identify possible issues:
+helm show all <chart>                # Inspect a chart and list its contents:
+helm show values <chart>             # Displays the contents of the values.yaml file
+helm pull <chart>                    # Download/pull chart 
+helm pull <chart> --untar=true       # If set to true, will untar the chart after downloading it
+helm pull <chart> --verify           # Verify the package before using it
+helm pull <chart> --version <number> # Default-latest is used, specify a version constraint for the chart version to use
+helm dependency list <chart>         # Display a list of a chart’s dependencies:
 ```
 
 ### Install and Uninstall Apps
@@ -67,33 +67,33 @@ helm rollback <release> <revision>  --cleanup-on-fail     # Allow deletion of ne
 
 ### List, Add, Remove, and Update Repositories
 ```YAML
-helm repo add <repo-name> <url>   # Add a repository from the internet:
-helm repo list                    # List added chart repositories
-helm repo update                  # Update information of available charts locally from chart repositories
-helm repo remove <repo_name>      # Remove one or more chart repositories
-helm repo index <DIR>             # Read the current directory and generate an index file based on the charts found.
-helm repo index <DIR> --merge     # Merge the generated index with an existing index file
-helm search repo <keyword>        # Search repositories for a keyword in charts
-helm search hub <keyword>         # Search for charts in the Artifact Hub or your own hub instance
+helm repo add <repo-name> <url> # Add a repository from the internet:
+helm repo list                  # List added chart repositories
+helm repo update                # Update information of available charts locally from chart repositories
+helm repo remove <repo_name>    # Remove one or more chart repositories
+helm repo index <DIR>           # Read the current directory and generate an index file based on the charts found.
+helm repo index <DIR> --merge   # Merge the generated index with an existing index file
+helm search repo <keyword>      # Search repositories for a keyword in charts
+helm search hub <keyword>       # Search for charts in the Artifact Hub or your own hub instance
 ```
 
 ### Helm Release monitoring
 ```YAML
-helm list                       # Lists all of the releases for a specified namespace, uses current namespace context if namespace not specified
-helm list --all                 # Show all releases without any filter applied, can use -a
-helm list --all-namespaces      # List releases across all namespaces, we can use -A
-helm list -l key1=value1,key2=value2 # Selector (label query) to filter on, supports '=', '==', and '!='
-helm list --date                # Sort by release date
-helm list --deployed            # Show deployed releases. If no other is specified, this will be automatically enabled
-helm list --pending             # Show pending releases
-helm list --failed              # Show failed releases
-helm list --uninstalled         # Show uninstalled releases (if 'helm uninstall --keep-history' was used)
-helm list --superseded          # Show superseded releases
-helm list -o yaml               # Prints the output in the specified format. Allowed values: table, json, yaml (default table)
-helm status <release>           # This command shows the status of a named release.
-helm status <release> --revision <number>   # if set, display the status of the named release with revision
-helm history <release>          # Historical revisions for a given release.
-helm env                        # Env prints out all the environment information in use by Helm.
+helm list                                 # Lists all of the releases for a specified namespace, uses current namespace context if namespace not specified
+helm list --all                           # Show all releases without any filter applied, can use -a
+helm list --all-namespaces                # List releases across all namespaces, we can use -A
+helm list -l key1=value1,key2=value2      # Selector (label query) to filter on, supports '=', '==', and '!='
+helm list --date                          # Sort by release date
+helm list --deployed                      # Show deployed releases. If no other is specified, this will be automatically enabled
+helm list --pending                       # Show pending releases
+helm list --failed                        # Show failed releases
+helm list --uninstalled                   # Show uninstalled releases (if 'helm uninstall --keep-history' was used)
+helm list --superseded                    # Show superseded releases
+helm list -o yaml                         # Prints the output in the specified format. Allowed values: table, json, yaml (default table)
+helm status <release>                     # This command shows the status of a named release.
+helm status <release> --revision <number> # if set, display the status of the named release with revision
+helm history <release>                    # Historical revisions for a given release.
+helm env                                  # Env prints out all the environment information in use by Helm.
 ```
 
 ### Download Release Information
@@ -107,8 +107,8 @@ helm get values <release>   # Downloads a values file for a given release. use -
 
 ### Plugin Management
 ```YAML
-helm plugin install <path/url>      # Install plugins
-helm plugin list                    # View a list of all installed plugins
-helm plugin update <plugin>         # Update plugins
-helm plugin uninstall <plugin>      # Uninstall a plugin
+helm plugin install <path/url> # Install plugins
+helm plugin list               # View a list of all installed plugins
+helm plugin update <plugin>    # Update plugins
+helm plugin uninstall <plugin> # Uninstall a plugin
 ```
