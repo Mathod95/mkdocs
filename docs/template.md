@@ -7,6 +7,8 @@
 
 ### Ma configuration
 
+---
+
 ## Title1
 
 ### Title2
@@ -16,6 +18,8 @@
 ##### Title4
 
 ###### Title5
+
+---
 
 ## Conclusion
 
