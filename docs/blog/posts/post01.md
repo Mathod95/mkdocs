@@ -1,5 +1,5 @@
 ---
-title: My Blog Post
+title: Install Cilium in KinD
 date: 2025-10-03
 categories:
   - Kubernetes
@@ -17,7 +17,7 @@ sources:
 
 # Install Cilium in KinD
 
-this is the text for my first blog post.
+![post01](post01.svg)
 
 <!-- more -->
 ## Introduction
