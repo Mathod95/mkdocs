@@ -19,7 +19,7 @@ nav:
     - Argo:
       - CD:
         - Autopilot: apps/argo/cd/autopilot/argo-cd-autopilot.md
-      - Workflows: test.md
+      - Workflows: about/workflows.md
       - Events: about/Events.md
       - Rollouts: about/Rollouts.md
     - Cilium: about/cilium.md
@@ -70,6 +70,23 @@ plugins:
       show_toc_by_default: True
       theme: material
       toggle_button: all
+#  - glightbox: # https://github.com/blueswen/mkdocs-glightbox
+#      touchNavigation: true
+#      loop: false
+#      effect: zoom
+#      slide_effect: slide
+#      width: 100%
+#      height: auto
+#      zoomable: true
+#      draggable: true
+#      skip_classes:
+#        - custom-skip-class-name
+#      auto_themed: false
+#      auto_caption: false
+#      caption_position: bottom
+#      background: white
+#      shadow: true
+#      manual: false
 
 theme:
   name: material
@@ -100,8 +117,8 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-    - content.action.edit
-    - content.action.view
+#    - content.action.edit
+#    - content.action.view
     # Code blocks - https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
     - content.code.copy
 #    - content.code.select # Sponsors only
