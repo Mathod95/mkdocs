@@ -32,10 +32,10 @@ Une définition Kubernetes est la description complète d’un objet Kubernetes 
     apiVersion: v1 #(1)!
     kind: Pod #(2)!
     metadata: #(3)!
-      name: app1 #(4)!
+      name: app1-pod #(4)!
       namespace: app1
       labels: #(5)!
-        app: myapp
+        app: app1
         type: frontend
       annotations: #(6)!
         aws-account: "2389849082948"
@@ -56,30 +56,45 @@ Une définition Kubernetes est la description complète d’un objet Kubernetes 
         
         For other object types, you might use values like `ReplicaSet`, `Deployment`, or `Service`.
     3.  In the **metadata** section, you provide key information about the Kubernetes object. 
-    
-        This includes the object's name, labels, ... which are key-value pairs that assist in organizing and filtering resources. 
-        
+
+        This includes the object's name, labels, ... which are key-value pairs that assist in organizing and filtering resources.
         !!! Warning 
             Do not include extra fields that Kubernetes doesn’t recognize under metadata, or it will reject your manifest.
+            ??? info "Commonly used fields"
+                - name
+                - namespace
+                - labels
+                - annotations
+                - uid
+                - generation
+                - creationTimestam
+                - resourceVersion
+                - finalizers
+                - ownerReferences
+                - managedFields
+    4.  **TYPE STRING**
 
-        ??? info "Commonly used fields"
-            - name
-            - namespace
-            - labels
-            - annotations
-            - uid
-            - generation
-            - creationTimestam
-            - resourceVersion
-            - finalizers
-            - ownerReferences
-            - managedFields
-    4.  The name field must be a string.
+        !!! tips "Nommage clair et explicite"
+            Appeler ton Pod app1-pod permet de savoir immédiatement qu’il s’agit d’un Pod et non:
+
+            - d’un Deployment (app1-deploy),
+            - d’un Service (app1-svc),
+            - d’une ConfigMap (app1-cm),
+            - ou d’un Namespace (app1).
+
+            Cela aide beaucoup quand tu manipules plein de ressources avec `kubectl get all` ou dans une CI/CD.
+
+            Si ton manifest est un `deployment`, `replicaSet` ou `job` il n'est pas nécéssaire d'ajouter la notion `<appName>-pod` il sera automatiquement générer
+
+            !!! Example
+                ```shell
+                app1-deploy-79f8d9ccf5-v72rk
+                ```
     5.  The labels field is a dictionary where you can define several key-value pairs.
-    
+
         For instance, if you set labels such as app: myapp and type: frontend, it becomes easier to filter and manage your Pods later.
     6.  
     7.  The spec section describes the desired state of the object. 
-    
+
         For a Pod, this primarily involves specifying the list of containers. Although a Pod can run multiple containers, this example focuses on a single container defined within an array for clarity. 
     8.  Each container configuration includes properties like the container's name and the Docker image used.
