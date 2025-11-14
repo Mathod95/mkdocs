@@ -98,3 +98,7 @@ Une définition Kubernetes est la description complète d’un objet Kubernetes 
 
         For a Pod, this primarily involves specifying the list of containers. Although a Pod can run multiple containers, this example focuses on a single container defined within an array for clarity. 
     8.  Each container configuration includes properties like the container's name and the Docker image used.
+
+<figure markdown="1">
+![image](YAML.svg)
+</figure>
