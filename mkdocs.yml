@@ -13,6 +13,7 @@ nav:
       - Pods:
         - Probes: kubernetes/objets/pods/probes/probes.md
         - Security Context: kubernetes/objets/pods/securityContext/securityContext.md
+      - Deployment: kubernetes/objets/deployment/deployment.md
     - Tips: kubernetes/tips.md
     - Aliases: kubernetes/aliases.md
     - Generator: kubernetes/generator/test.md

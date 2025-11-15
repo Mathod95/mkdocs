@@ -11,3 +11,11 @@
     - Aliases: kubernetes/aliases.md
     - Generator: kubernetes/generator/test.md
     - Draft: kubernetes/draft.md
+
+## Todo
+
+  - [ ] YAML introduction
+  - [ ] ReplicaSet
+  - [ ] Pods
+  - [ ] Kubectl
+  - [ ] Deployment
