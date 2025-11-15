@@ -102,3 +102,31 @@ Une définition Kubernetes est la description complète d’un objet Kubernetes 
 <figure markdown="1">
 ![image](YAML.svg)
 </figure>
+
+
+# replicaSet
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+```
