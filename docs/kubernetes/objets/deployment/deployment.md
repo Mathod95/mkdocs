@@ -1,6 +1,7 @@
 # Deployment
 
-```apiVersion: apps/v1
+```YAML
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment
@@ -21,4 +22,5 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: nginx```
+        image: nginx
+```

@@ -19,3 +19,10 @@
   - [ ] Pods
   - [ ] Kubectl
   - [ ] Deployment
+      - [ ] Strategy
+  - [ ] Networking
+  - [ ] Services
+    - [ ] NodePort
+    range port 30000–32767
+    - [ ] ClusterIP
+    - [ ] LoadBalancer

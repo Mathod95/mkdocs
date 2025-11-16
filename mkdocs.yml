@@ -18,6 +18,7 @@ nav:
     - Aliases: kubernetes/aliases.md
     - Generator: kubernetes/generator/test.md
     - Draft: kubernetes/draft.md
+  - Clouds: clouds/index.md
   - Apps:
     - Argo:
       - CD:

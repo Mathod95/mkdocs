@@ -103,7 +103,6 @@ Une définition Kubernetes est la description complète d’un objet Kubernetes 
 ![image](YAML.svg)
 </figure>
 
-
 # replicaSet
 
 ```yaml
