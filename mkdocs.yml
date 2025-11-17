@@ -22,6 +22,7 @@ nav:
     - aws:
         - iam: clouds/aws/iam/iam.md
   - Crossplane: crossplane/index.md
+  - Infra: infra/index.md
   - Apps:
     - Argo:
       - CD:

@@ -182,3 +182,45 @@ spec:
     providerConfigRef:
       name: default
 ```
+
+## Komoplane
+
+``` shell
+helm repo add komodorio https://helm-charts.komodor.io
+"komodorio" has been added to your repositories
+```
+```shell
+helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "komodorio" chart repository
+...Successfully got an update from the "crossplane-stable" chart repository
+Update Complete. ⎈Happy Helming!⎈
+```
+```shell
+helm upgrade --install komoplane komodorio/komoplane
+Release "komoplane" does not exist. Installing it now.
+NAME: komoplane
+LAST DEPLOYED: Mon Nov 17 15:42:15 2025
+NAMESPACE: crossplane-system
+STATUS: deployed
+REVISION: 1
+NOTES:
+Thank you for installing Komoplane.
+Application can be accessed:
+  * Within your cluster, at the following DNS name at port 8090:
+
+    komoplane.crossplane-system.svc.cluster.local
+
+  * From outside the cluster, run these commands in the same shell:
+
+    export POD_NAME=$(kubectl get pods --namespace crossplane-system -l "app.kubernetes.io/name=komoplane,app.kubernetes.io/instance=komoplane" -o jsonpath="{.items[0].metadata.name}")
+    export CONTAINER_PORT=$(kubectl get pod --namespace crossplane-system $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+    echo "Visit http://127.0.0.1:8090 to use your application"
+    kubectl --namespace crossplane-system port-forward $POD_NAME 8090:$CONTAINER_PORT
+
+Visit our repo at:
+https://github.com/komodorio/komoplane
+```
+
+
+helm upgrade --install komoplane komodorio/komoplane --namespace komoplane --create-namespace --set service.type=NodePort --set service.nodePort=30080 --set extraArgs="--port=8090"
