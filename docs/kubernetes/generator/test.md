@@ -143,7 +143,7 @@ networks:
 
         // Remplacer dynamiquement les variables dans le template YAML
         var yamlContent = yamlTemplate
-            .replace(/APPNAME/g, appname)                   // Remplacer APPNAME par la valeur saisie
+            .replace(/APPNAME/g, appname)                  // Remplacer APPNAME par la valeur saisie
             .replace(/APPLICATION_PORT/g, port)            // Remplacer APPLICATION_PORT par la valeur saisie
             .replace(/\/CONFIG/g, configPath)              // Remplacer /CONFIG par la valeur saisie
             .replace(/DOCKER\/IMAGE:TAG/g, imageTag);      // Remplacer DOCKER/IMAGE:TAG par la valeur saisie
