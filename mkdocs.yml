@@ -129,7 +129,7 @@ theme:
 #    - content.action.view
     # Code blocks - https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
     - content.code.copy
-#    - content.code.select # Sponsors only
+#    - content.code.select # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=copy+button#code-selection-button
     - content.code.annotate
     - content.tooltips
     - header.autohide
