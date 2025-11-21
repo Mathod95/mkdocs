@@ -20,9 +20,13 @@ nav:
     - Draft: kubernetes/draft.md
   - Clouds:
     - aws:
-        - iam: clouds/aws/iam/iam.md
+      - iam: clouds/aws/iam/iam.md
   - Crossplane: crossplane/index.md
-  - Infra: infra/index.md
+  - Infra: 
+    - infra/index.md
+    - Infra:
+      - k3s: infra/infra/k3s.md
+      - kind: infra/infra/kind.md
   - Apps:
     - Argo:
       - CD:
@@ -50,6 +54,7 @@ nav:
     - Prometheus: about/prometheus.md
     - Velero: about/velero.md
     - Helm:
+        - Wrapper: apps/helm/wrapper.md
         - Cheatsheet: apps/helm/cheatsheet.md
   - NixOS:
     - MyEnv: nixos/packages/packages.md
