@@ -1,7 +1,7 @@
 ---
 hide:
   - tags
-  - navigation
+  #- navigation
 tags:
   - Crossplane
   - Komoplane
@@ -143,51 +143,54 @@ todo:
 
 ### Create an user with admin privilege
 
-```shell
-[default]
-aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
-aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
+!!! Info
 
-```shell
-kubectl create secret generic aws-secret -n crossplane-system --from-file=creds=./aws-credentials.txt
-```
+    ```shell title="aws-credentials.txt"
+    [default]
+    aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
+    aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    ```
 
+    ```shell hl_lines="1" title="Create secret from aws-credentials.txt"
+    kubectl create secret generic aws-secret -n crossplane-system --from-file=creds=./aws-credentials.txt
+    ```
 
-```yaml
----
-apiVersion: aws.m.upbound.io/v1beta1
-kind: ProviderConfig
-metadata:
-  name: default
-spec:
-  credentials:
-    source: Secret
-    secretRef:
-        namespace: crossplane-system
-        name: aws-secret
-        key: creds
-```
+    ```yaml
+    ---
+    apiVersion: aws.m.upbound.io/v1beta1
+    kind: ProviderConfig
+    metadata:
+      name: default
+    spec:
+      credentials:
+        source: Secret
+        secretRef:
+            namespace: crossplane-system
+            name: aws-secret
+            key: creds
+    ```
 
 ### Create resources
 
-```yaml
----
-apiVersion: s3.aws.upbound.io/v1beta1
-kind: Bucket
-metadata:
-  name: app1-bucket-mathod
-  namespace: crossplane-system
-spec:
-  forProvider:
-    region: eu-west-3
-      tags:
-        company: mathod
-        project: app1
-        environment: production
-    providerConfigRef:
-      name: default
-```
+!!! Info "Create bucket s3"
+
+    ```yaml
+    ---
+    apiVersion: s3.aws.upbound.io/v1beta1
+    kind: Bucket
+    metadata:
+      name: app1-bucket-mathod
+      namespace: crossplane-system
+    spec:
+      forProvider:
+        region: eu-west-3
+          tags:
+            company: mathod
+            project: app1
+            environment: production
+        providerConfigRef:
+          name: default
+    ```
 
 ## Install Komoplane
 

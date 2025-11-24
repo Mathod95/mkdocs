@@ -1,0 +1,1 @@
+https://github.com/crossplane-contrib/provider-gitlab
