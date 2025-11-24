@@ -1,3 +1,10 @@
+---
+hide:
+  - tags
+tags:
+  - template
+todo:
+---
 
 ## Introduction
 

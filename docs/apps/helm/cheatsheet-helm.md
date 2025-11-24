@@ -2,11 +2,11 @@
 hide:
   - tags
 tags:
-  - Cheatsheet
+  - CheatSheet
   - Helm
 ---
 
-# Cheat Sheet
+# Helm cheat sheet
 Helm cheatsheet featuring all the necessary commands required to manage an application through Helm.
 
 ## Basic interpretations/context:
@@ -112,3 +112,17 @@ helm plugin list               # View a list of all installed plugins
 helm plugin update <plugin>    # Update plugins
 helm plugin uninstall <plugin> # Uninstall a plugin
 ```
+
+??? Tips "ABBR"
+
+    ```
+    abbr "h"="helm"
+    abbr "hd"="helm delete"
+    abbr "hi"="helm install"
+    abbr "hs"="helm status"
+    abbr "hl"="helm list"
+    abbr "hla"="helm list -A"
+    abbr "hu"="helm upgrade"
+    abbr "hui"="helm upgrade --install"
+    abbr "hun"="helm uninstall"
+    ```

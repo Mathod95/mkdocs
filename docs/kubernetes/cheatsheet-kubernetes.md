@@ -1,3 +1,15 @@
+---
+hide:
+  - tags
+tags:
+  - CheatSheet
+  - Kubernetes
+todo:
+---
+
+# Kubernetes cheat sheet
+Kubernetes cheatsheet featuring all the necessary commands required to manage a Kubernetes cluster.
+
 ```shell
 k         "kubectl"                                          # The kubectl command
 kca       "kubectl --all-namespaces"                         # The kubectl command targeting all namespaces
@@ -137,3 +149,126 @@ kej       "kubectl edit job"                                 # Edit a Job in det
 kdj       "kubectl describe job"                             # Describe the Job
 kdelj     "kubectl delete job"                               # Delete the Job
 ```
+
+??? Tips "ABBR"
+
+    ``` shell
+    abbr "k"="kubectl"
+    abbr "kca"="kubectl --all-namespaces"
+    abbr "kaf"="kubectl apply -f"
+    abbr "keti"="kubectl exec -ti"
+    # Context
+    abbr "kctx"="kubectx"
+    abbr "kcuc"="kubectl config use-context"
+    abbr "kcsc"="kubectl config set-context"
+    abbr "kcdc"="kubectl config delete-context"
+    abbr "kccc"="kubectl config current-context"
+    abbr "kcgc"="kubectl config get-contexts"
+    # General aliases
+    abbr "kdel"="kubectl delete"
+    abbr "kdelf"="kubectl delete -f"
+    # Pod management
+    abbr "kgp"="kubectl get pods"
+    abbr "kgpl"="kubectl get pods -l"
+    abbr "kgpn"="kubectl get pods -n"
+    abbr "kgpsl"="kubectl get pods --show-labels"
+    abbr "kgpw"="kubectl get pods --watch"
+    abbr "kgpwide"="kubectl get pods -o wide"
+    abbr "kep"="kubectl edit pods"
+    abbr "kdp"="kubectl describe pods"
+    abbr "kdelp"="kubectl delete pods"
+    # Service management
+    abbr "kgs"="kubectl get svc"
+    abbr "kgsw"="kubectl get svc --watch"
+    abbr "kgswide"="kubectl get svc -o wide"
+    abbr "kes"="kubectl edit svc"
+    abbr "kds"="kubectl describe svc"
+    abbr "kdels"="kubectl delete svc"
+    # Ingress management
+    abbr "kgi"="kubectl get ingress"
+    abbr "kei"="kubectl edit ingress"
+    abbr "kdi"="kubectl describe ingress"
+    abbr "kdeli"="kubectl delete ingress"
+    # Namespace management
+    abbr "kns"="kubens"
+    abbr "kgns"="kubectl get namespaces"
+    abbr "kcn"="kubectl config set-context --current --namespace"
+    abbr "kens"="kubectl edit namespace"
+    abbr "kdns"="kubectl describe namespace"
+    abbr "kdelns"="kubectl delete namespace"
+    # ConfigMap management
+    abbr "kgcm"="kubectl get configmaps"
+    abbr "kecm"="kubectl edit configmap"
+    abbr "kdcm"="kubectl describe configmap"
+    abbr "kdelcm"="kubectl delete configmap"
+    # Secret management
+    abbr "kgsec"="kubectl get secret"
+    abbr "kdsec"="kubectl describe secret"
+    abbr "kdelsec"="kubectl delete secret"
+    # Deployment management
+    abbr "kgd"="kubectl get deployment"
+    abbr "kgdw"="kubectl get deployment --watch"
+    abbr "kgdwide"="kubectl get deployment -o wide"
+    abbr "ked"="kubectl edit deployment"
+    abbr "kdd"="kubectl describe deployment"
+    abbr "kdeld"="kubectl delete deployment"
+    abbr "ksd"="kubectl scale deployment"
+    abbr "krsd"="kubectl rollout status deployment"
+    abbr "kres"="kubectl set env $@ REFRESHED_AT=..."
+    # Rollout management
+    abbr "kgrs"="kubectl get replicaset"
+    abbr "kdrs"="kubectl describe replicaset"
+    abbr "kers"="kubectl edit replicaset"
+    abbr "krh"="kubectl rollout history"
+    abbr "kru"="kubectl rollout undo"
+    # Port forwarding
+    abbr "kpf"="kubectl port-forward"
+    # Tools for accessing all information
+    abbr "kga"="kubectl get all"
+    abbr "kgaa"="kubectl get all --all-namespaces"
+    # Logs
+    abbr "kl"="kubectl logs"
+    abbr "klf"="kubectl logs -f"
+    # File copy
+    abbr "kcp"="kubectl cp"
+    # Node management
+    abbr "kgno"="kubectl get nodes"
+    abbr "kgnosl"="kubectl get nodes --show-labels"
+    abbr "keno"="kubectl edit node"
+    abbr "kdno"="kubectl describe node"
+    abbr "kdelno"="kubectl delete node"
+    # Persistent Volume Claim management
+    abbr "kgpvc"="kubectl get pvc"
+    abbr "kgpvcw"="kubectl get pvc --watch"
+    abbr "kepvc"="kubectl edit pvc"
+    abbr "kdpvc"="kubectl describe pvc"
+    abbr "kdelpvc"="kubectl delete pvc"
+    # StatefulSets management
+    abbr "kgss"="kubectl get statefulset"
+    abbr "kgssw"="kubectl get statefulset --watch"
+    abbr "kgsswide"="kubectl get statefulset -o wide"
+    abbr "kess"="kubectl edit statefulset"
+    abbr "kdss"="kubectl describe statefulset"
+    abbr "kdelss"="kubectl delete statefulset"
+    abbr "ksss"="kubectl scale statefulset"
+    abbr "krsss"="kubectl rollout status statefulset"
+    # Service Accounts management
+    abbr "kdsa"="kubectl describe sa"
+    abbr "kdelsa"="kubectl delete sa"
+    # DaemonSet management
+    abbr "kgds"="kubectl get daemonset"
+    abbr "kgdsw"="kubectl get daemonset --watch"
+    abbr "keds"="kubectl edit daemonset"
+    abbr "kdds"="kubectl describe daemonset"
+    abbr "kdelds"="kubectl delete daemonset"
+    # CronJob management
+    abbr "kgcj"="kubectl get cronjob"
+    abbr "kecj"="kubectl edit cronjob"
+    abbr "kdcj"="kubectl describe cronjob"
+    abbr "kdelcj"="kubectl delete cronjob"
+    # Job management
+    abbr "kgj"="kubectl get job"
+    abbr "kej"="kubectl edit job"
+    abbr "kdj"="kubectl describe job"
+    abbr "kdelj"="kubectl delete job"
+    ```

@@ -15,7 +15,7 @@ nav:
         - Security Context: kubernetes/objets/pods/securityContext/securityContext.md
       - Deployment: kubernetes/objets/deployment/deployment.md
     - Tips: kubernetes/tips.md
-    - Aliases: kubernetes/aliases.md
+    - Cheatsheet: kubernetes/cheatsheet-kubernetes.md
     - Generator: kubernetes/generator/test.md
     - Draft: kubernetes/draft.md
   - Clouds:
@@ -46,7 +46,7 @@ nav:
     - Keda: about/keda.md
     - KinD:
       - KinD: apps/kind/kind.md
-      - Cheatsheet: apps/kind/cheatsheet.md
+      - Cheatsheet: apps/kind/cheatsheet-kind.md
     - Kustomize: about/kustomize.md
     - Kube-score: about/kube-score.md
     - KubeBlocks: about/kubeblocks.md
@@ -55,7 +55,7 @@ nav:
     - Velero: about/velero.md
     - Helm:
         - Wrapper: apps/helm/wrapper.md
-        - Cheatsheet: apps/helm/cheatsheet.md
+        - Cheatsheet: apps/helm/cheatsheet-helm.md
   - NixOS:
     - MyEnv: nixos/packages/packages.md
     - HomeManager: nixos/packages/home-manager.md
