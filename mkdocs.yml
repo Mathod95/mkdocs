@@ -23,7 +23,13 @@ nav:
       - iam: clouds/aws/iam/iam.md
   - Crossplane: 
     - crossplane/index.md
-    - eks: crossplane/aws/services/eks/crossplane-eks.md
+    - resources:
+      - cloud-providers:
+          - aws:
+            - s3: crossplane/resources/cloud-providers/aws/s3/s3.md
+            - eks: crossplane/resources/cloud-providers/aws/eks/eks.md
+#      - iac:
+#      - vcs:
   - Infra: 
     - infra/index.md
     - Infra:
@@ -58,6 +64,8 @@ nav:
     - Helm:
         - Wrapper: apps/helm/wrapper.md
         - Cheatsheet: apps/helm/cheatsheet-helm.md
+  - Rust:
+      - rust/index.md
   - NixOS:
     - MyEnv: nixos/packages/packages.md
     - HomeManager: nixos/packages/home-manager.md

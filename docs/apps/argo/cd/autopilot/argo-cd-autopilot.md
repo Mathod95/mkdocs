@@ -84,3 +84,4 @@ argocd-autopilot app create hello-world --app github.com/argoproj-labs/argocd-au
 
 - https://www.youtube.com/watch?v=nR-i0Hn6trw
 - https://argocd-autopilot.readthedocs.io/en/stable/Getting-Started/
+- https://github.com/argoproj/argocd-example-apps
