@@ -5,7 +5,7 @@ repo_url: https://github.com/Mathod95/mkdocs
 edit_uri: edit/main/docs/
 
 nav:
-  - Home: index.md
+  - HOME: index.md
   - Kubernetes:
     - kubernetes/index.md
     - Objets:
@@ -66,12 +66,13 @@ nav:
         - Cheatsheet: apps/helm/cheatsheet-helm.md
   - Rust:
       - rust/index.md
-  - NixOS:
+  - Linux:
     - MyEnv: nixos/packages/packages.md
     - HomeManager: nixos/packages/home-manager.md
     - Hyprland: nixos/packages/hyprland.md
     - Packages:
       - Vim: nixos/packages/vim.md
+      - zsh: nixos/packages/zsh/zsh.md
   - Awesome: awesome.md
   - Glossaire: glosarry.md
   - Tags: tags.md
@@ -111,19 +112,41 @@ plugins:
 #      shadow: true
 #      manual: false
 
+#theme:
+#  name: material
+#  palette:
+#    - scheme: default
+#      toggle:
+#        icon: material/toggle-switch
+#        name: Dark mode
+#      primary: red
+#    - scheme: slate
+#      toggle:
+#        icon: material/toggle-switch-off-outline
+#        name: Light mode
+#      primary: teal
 theme:
   name: material
+  language: en
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/toggle-switch
-        name: Dark mode
-      primary: red
-    - scheme: slate
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
       toggle:
-        icon: material/toggle-switch-off-outline
-        name: Light mode
-      primary: teal
+        icon: material/toggle-switch-off
+        name: Switch to system preference
   features:
     # Setting up navigation
     - navigation.instant
