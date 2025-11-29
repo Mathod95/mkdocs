@@ -2,64 +2,82 @@
 https://wiki.nixos.org/wiki/Fonts
 
 - [ ] Install home-manager as a module of nixos
-	- [ ] Deploy zsh configuration with home-manager https://www.youtube.com/watch?v=bFmvnJVd5yQ
+  - [ ] Deploy zsh configuration with home-manager https://www.youtube.com/watch?v=bFmvnJVd5yQ
 
 - [ ] Hyprland
-	- [ ] https://github.com/JaKooLit/NixOS-Hyprland
-	- [ ] https://github.com/maotseantonio/shizuru
-	- [ ] Hyprlock
-		- [ ] hyprland.conf https://github.com/maotseantonio/NixOS-Hyprland
-	- [ ] hypridle
-	- [ ] hyprpolkitagent
-	- [ ] hyprcursor https://www.youtube.com/watch?v=uZDPXFQYz0Q&t=2175s
-	- [ ] hyprpm
+  - [ ] https://github.com/JaKooLit/NixOS-Hyprland
+  - [ ] https://github.com/maotseantonio/shizuru
+  - [ ] Hyprlock
+    - [ ] hyprland.conf https://github.com/maotseantonio/NixOS-Hyprland
+  - [ ] hypridle
+  - [ ] hyprpolkitagent
+  - [ ] hyprcursor https://www.youtube.com/watch?v=uZDPXFQYz0Q&t=2175s
+  - [ ] hyprpm
 		- [ ] hyprbars
 			- [ ] https://www.reddit.com/r/hyprland/comments/1cyaz4u/i_like_hyprbars_thats_all/
 - [ ] Home-Manager
 	- [ ] home.nix
 - [ ] Packages
-	- [ ] argocd
-	- [ ] awscli2
-	- [x] bat
-	- [x] btop
-	- [x] cilium-cli
-	- [x] crossplane-cli
-	- [ ] curl
+	- [ ] [argocd](https://github.com/argoproj/argo-cd) 
+	- [ ] [awscli](https://github.com/aws/aws-cli)
+	- [ ] [ansible](https://github.com/ansible/ansible)
+	- [ ] [bat](https://github.com/sharkdp/bat) 
+	- [ ] [btop](https://github.com/aristocratos/btop)
+	- [ ] [cilium-cli](https://github.com/cilium/cilium-cli)
+	- [ ] [crossplane-cli](https://github.com/crossplane/crossplane)
+	- [ ] [curl](https://github.com/curl/curl)
 	- [ ] docker
 		- [ ] Install docker rootless https://wiki.nixos.org/wiki/Docker
-	- [x] eza
+	- [ ] [doggo](https://github.com/mr-karan/doggo)
+	- [ ] [eza](https://github.com/eza-community/eza) 
 	- [ ] fastfetch
-	- [x] fd
-	- [x] fzf
-	- [x] git
-	- [x] httpie
-	- [x] k9s
-	- [ ] keychain
-	- [x] kind
+	- [ ] [fd](https://github.com/sharkdp/fd)
+	- [ ] [fzf](https://github.com/junegunn/fzf)
+	- [ ] git
+	- [ ] [ripgrep](https://github.com/BurntSushi/ripgrep)
+	- [ ] [httpie](https://github.com/httpie/cli)
+	- [ ] [curlie](https://github.com/rs/curlie)
+	- [ ] [yq](https://github.com/mikefarah/yq)
+	- [ ] [sd](https://github.com/chmln/sd)
+	- [ ] [k9s](https://github.com/derailed/k9s) 
+	- [ ] [keychain](https://github.com/funtoo/keychain)
+	- [ ] [lazygit](https://github.com/jesseduffield/lazygit)
+	- [ ] [procs](https://github.com/dalance/procs)
+	- [ ] [kind](https://github.com/kubernetes-sigs/kind)
 	- [ ] kitty
-	- [x] kube-linter
-	- [x] kube-score
-	- [ ] kubectl
-	- [ ] kubecolor
-	- [x] kubectx
-	- [x] kubescape
-	- [x] krew
-	- [x] kubernetes-helm
-	- [x] kustomize
-	- [x] kyverno
-	- [ ] neovim
-		- [ ] nvchad
-	- [x] opentofu
+	- [ ] [procs](https://github.com/dalance/procs)
+	- [ ] [gping](https://github.com/orf/gping)
+	- [ ] [kube-linter](https://github.com/stackrox/kube-linter)
+	- [ ] [kube-score](https://github.com/zegl/kube-score) 
+	- [ ] [kubectl](https://github.com/kubernetes/kubectl)
+	- [ ] [kubecolor](https://github.com/kubecolor/kubecolor)
+	- [ ] [kubectx](https://github.com/ahmetb/kubectx) 
+	- [ ] [kubescape](https://github.com/kubescape/kubescape) 
+	- [ ] [krew](https://krew.sigs.k8s.io/)
+	- [ ] [kustomize](https://github.com/kubernetes-sigs/kustomize) 
+	- [ ] [kyverno](https://github.com/kyverno/kyverno)  
+	- [ ] [opentofu](https://github.com/opentofu/opentofu)   
 	- [ ] ssh
-	- [ ] tlrc
-	- [x] velero
-	- [ ] vim
-	- [ ] vscode
-	- [x] wget
-	- [ ] zellij
-	- [ ] zsh
+	- [ ] [tlrc](https://github.com/tldr-pages/tlrc)
+	- [ ] [fastfetch](https://formulae.brew.sh/formula/fastfetch)
+	- [ ] [helm](https://github.com/helm/helm)
+	- [ ] [velero](https://github.com/vmware-tanzu/velero)
+	- [ ] [vim](https://github.com/vim/vim) 
+	- [ ] [vscode](https://github.com/microsoft/vscode)
+	- [ ] [systemd](https://github.com/systemd/systemd)
+	- [ ] [wget](https://github.com/mirror/wget)  
+	- [ ] [zellij](https://github.com/zellij-org/zellij)
+	- [ ] [zoxide](https://github.com/ajeetdsouza/zoxide)
+	- [ ] [zsh](https://github.com/zsh-users/zsh)
 		- [ ] https://wiki.nixos.org/wiki/Zsh
-		- [ ] zinit
-			- [ ] zsh-abbr
-			- [ ] zsh-autosuggeestions
-			- [ ] zsh-autocomplete
+		- [ ] [zinit](https://github.com/zdharma-continuum/zinit)
+			- [ ] [zsh-abbr](https://github.com/olets/zsh-abbr)
+			- [ ] [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+			- [ ] [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
+			- [ ] [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+			- [ ] [F-Sy-H](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+
+!!! Note
+
+    - [awesome-cli-apps](https://github.com/agarrharr/awesome-cli-apps)
+    - [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)

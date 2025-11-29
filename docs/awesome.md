@@ -1,15 +1,20 @@
 ---
-prompt: Description format twitter
+hide:
+  - tags
+  - navigation
+  - title
+tags:
+  - Awesome
 ---
 #
 <p align="center">
-  <a href="https://github.com/sindresorhus/awesome" target="_blank">
+  <a href="https://github.com/sindresorhus/awesome">
     <img src="https://github.com/sindresorhus/awesome/raw/main/media/logo.svg" />
   </a>
 </p>  
 
 <p align="center">
-  <a href="https://github.com/louislam/uptime-kuma" target="_blank">
+  <a href="https://github.com/louislam/uptime-kuma">
     <img src="https://opengraph.githubassets.com/Mathod/louislam/uptime-kuma" />
   </a>
 </p>  
@@ -17,7 +22,7 @@ Uptime Kuma est un outil open source pour monitorer la disponibilité de sites e
 ---
 
 <p align="center">
-  <a href="https://github.com/eza-community/eza" target="_blank">
+  <a href="https://github.com/eza-community/eza">
     <img src="https://opengraph.githubassets.com/Mathod/eza-community/eza" />
   </a>
 </p>  
@@ -25,7 +30,7 @@ Eza est un utilitaire CLI qui améliore la commande ls en affichant les fichiers
 ---
 
 <p align="center">
-  <a href="https://github.com/backstage/backstage" target="_blank">
+  <a href="https://github.com/backstage/backstage">
     <img src="https://opengraph.githubassets.com/Mathod/backstage/backstage" />
   </a>
 </p>  
@@ -33,7 +38,7 @@ Backstage, créé par Spotify, est une plateforme open source centralisant docum
 ---
 
 <p align="center">
-  <a href="https://github.com/komodorio/komoplane" target="_blank">
+  <a href="https://github.com/komodorio/komoplane">
     <img src="https://opengraph.githubassets.com/Mathod/komodorio/komoplane" />
   </a>
 </p>  
@@ -41,7 +46,7 @@ Komoplane est une WebUI open source basée sur Crossplane qui facilite la gestio
 ---
 
 <p align="center">
-  <a href="https://github.com/jesec/flood" target="_blank">
+  <a href="https://github.com/jesec/flood">
     <img src="https://opengraph.githubassets.com/Mathod/jesec/flood" />
   </a>
 </p>  
@@ -49,7 +54,7 @@ Flood est une interface web moderne pour contrôler rTorrent, qBittorrent, Delug
 ---
 
 <p align="center">
-  <a href="https://github.com/argoproj-labs/rollout-extension" target="_blank">
+  <a href="https://github.com/argoproj-labs/rollout-extension">
     <img src="https://opengraph.githubassets.com/Mathod/argoproj-labs/rollout-extension" />
   </a>  
 </p>  
@@ -57,9 +62,22 @@ Rollout Extension est un plugin open source pour Argo CD qui facilite la gestion
 ---
 
 <p align="center">
-  <a href="https://github.com/argoproj-labs/argocd-extension-installer" target="_blank" rel="noopener noreferrer">
-    <img src="https://opengraph.githubassets.com/Mathod/argoproj-labs/argocd-extension-installer" alt="ArgoCD Extension Installer">
+  <a href="https://github.com/argoproj-labs/argocd-extension-installer">
+    <img src="https://opengraph.githubassets.com/Mathod/argoproj-labs/argocd-extension-installer" />
   </a>
 </p>  
 ArgoCD Extension Installer est un outil open source qui simplifie l'installation et la gestion des extensions dans Argo CD, rendant la plateforme plus modulaire et personnalisable. #GitOps #DevOps #Kubernetes
 ---
+
+<p align="center">
+  <a href="https://github.com/komodorio/helm-dashboard">
+    <img src="https://opengraph.githubassets.com/Mathod/komodorio/helm-dashboard" />
+  </a>
+</p>  
+---
+
+<p align="center">
+  <a href="https://github.com/ekristen/aws-nuke">
+    <img src="https://opengraph.githubassets.com/Mathod/ekristen/aws-nuke" />
+  </a>
+</p>  
