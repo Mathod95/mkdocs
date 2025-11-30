@@ -52,3 +52,28 @@ Phrase contenant ton mot-clé principal.
 ### En rapport avec cet article
 
 ### Liens utile
+
+
+
+----------- HELPER -----------
+```yaml
+apiVersion: v2
+name: crossplane
+description: A Helm chart for Crossplane
+type: application
+version: "0.1.0" #(1)!
+appVersion: "2.1.1" #(2)!
+
+dependencies:
+  - name: crossplane
+    version: "2.1.1"
+    repository: "https://charts.crossplane.io/stable"
+```
+
+  1.  **REQUIRED**
+  
+      **version**: La version de ton manifest Chart.yaml.  
+      
+  2.  **OPTIONAL**
+  
+      **appVersion**: La version de l'application que tu déploie.

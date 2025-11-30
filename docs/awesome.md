@@ -70,14 +70,43 @@ ArgoCD Extension Installer est un outil open source qui simplifie l'installation
 ---
 
 <p align="center">
+  <a href="https://github.com/ekristen/aws-nuke">
+    <img src="https://opengraph.githubassets.com/Mathod/ekristen/aws-nuke" />
+  </a>
+</p>
+---
+
+<p align="center">
+  <a href="https://github.com/argoproj-labs/argocd-autopilot">
+    <img src="https://opengraph.githubassets.com/Mathod/argoproj-labs/argocd-autopilot" />
+  </a>
+</p>
+---
+
+<p align="center">
+  <a href="https://github.com/akuity/awesome-argo">
+    <img src="https://opengraph.githubassets.com/Mathod/akuity/awesome-argo" />
+  </a>
+</p>
+---
+
+<p align="center">
+  <a href="https://github.com/mziyabo/argocd-trivy-extension">
+    <img src="https://opengraph.githubassets.com/Mathod/mziyabo/argocd-trivy-extension" />
+  </a>
+</p>
+---
+
+<p align="center">
+  <a href="https://github.com/argoproj/argo-cd">
+    <img src="https://opengraph.githubassets.com/Mathod/argoproj/argo-cd" />
+  </a>
+</p>
+---
+
+<p align="center">
   <a href="https://github.com/komodorio/helm-dashboard">
     <img src="https://opengraph.githubassets.com/Mathod/komodorio/helm-dashboard" />
   </a>
 </p>  
 ---
-
-<p align="center">
-  <a href="https://github.com/ekristen/aws-nuke">
-    <img src="https://opengraph.githubassets.com/Mathod/ekristen/aws-nuke" />
-  </a>
-</p>  

@@ -18,9 +18,10 @@ nav:
     - Cheatsheet: kubernetes/cheatsheet-kubernetes.md
     - Generator: kubernetes/generator/test.md
     - Draft: kubernetes/draft.md
-  - Clouds Providers:
-    - aws:
-      - iam: clouds/aws/iam/iam.md
+  - AWS:
+    - iam: aws/iam/iam.md
+  - Argo:
+    - argo/index.md
   - Crossplane: 
     - crossplane/index.md
     - resources:

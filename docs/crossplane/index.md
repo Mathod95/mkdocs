@@ -7,6 +7,11 @@ tags:
   - Komoplane
 todo:
   - Precise to use namespaced scopped resources with crossplane 2.0 and explain why
+youtube:
+  - https://www.youtube.com/watch?v=yrj4lmScKHQ
+  - https://www.youtube.com/watch?v=eEcgn_gU3SM
+github:
+  - https://github.com/akuity/awesome-argo?tab=readme-ov-file#ecosystem-projects # search crossplane
 ---
 
 ## Install Crossplane
